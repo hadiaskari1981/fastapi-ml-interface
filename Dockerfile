@@ -21,7 +21,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # ---- Copy application code ----
 
 COPY src/main.py /app
-# COPY model /app/model -> # if you are mounting /var/tmp/model as a volume using cp -R model /var/tmp/
+ # if you are mounting /var/tmp/model as a volume using cp -R model /var/tmp/
+COPY model /app/model
 
 # --- Expose port -----------------------
 
