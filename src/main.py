@@ -4,12 +4,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing_extensions import Literal
 import pdb
-model_name = "model_binary.dat.gz"
+model_name = "classification_breast_cancer.data.gz"
 
 
 from pathlib import Path
 project_dir = Path(__file__).resolve().parent.parent
-model_path = project_dir / "model" / model_name
+model_path = project_dir / "app" / "model" / model_name
 model = joblib.load(model_path)
 app = FastAPI()
 

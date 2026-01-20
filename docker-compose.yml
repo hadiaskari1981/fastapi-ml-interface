@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    container_name: fastapi_ml_interface
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model:ro
+    environment:
+      MODEL_PATH: /app/model/classification_breast_cancer.data.gz
+    restart: unless-stopped

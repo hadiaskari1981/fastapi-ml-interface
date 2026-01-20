@@ -110,7 +110,7 @@ clf_rf = clf_rf.fit(x_train, y_train)
 model_dir = project_dir / "model"
 model_dir.mkdir(exist_ok=True)
 
-with gzip.open(model_dir / "model_binary.dat.gz", "wb") as f:
+with gzip.open(model_dir / "classification_breast_cancer.data.gz", "wb") as f:
     joblib.dump(clf_rf, f)
 
 ac = accuracy_score(y_test, clf_rf.predict(x_test))
